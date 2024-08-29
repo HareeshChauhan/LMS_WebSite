@@ -26,9 +26,18 @@
 				<li><a href='courses.html'>Courses</a></li>
 				<li><a href='contact.html'>Contact</a></li>
 			</ul>
-			<img src="img/menu.png" id="menu-btn" alt="">
+			<img src="img/menu.png" id="menu-btn" alt="Menu" class="menu-icon">
 		</div>
 	</nav>
+	<div class="dropdown-menu">
+        <ul>
+			<li><a class='active' href='index.html'>Home</a></li>
+			<li><a href='about.html'>About Us</a></li>
+			<li><a href='blog.html'>Blog</a></li>
+			<li><a href='courses.html'>Courses</a></li>
+			<li><a href='contact.html'>Contact</a></li>
+        </ul>
+    </div>
 	<div id="blog-container">
 		<div class="blogs blogpost">
 			<div class="post">
@@ -66,10 +75,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Post body ends from here -->
-
-
-	<!-- Footer section starts from here -->
 	<footer>
 		<div class="footer-col">
 			<h3>Top Products</h3>
@@ -125,6 +130,16 @@
 		</div>
 	</footer>
 	<script>
+		const menuIcon = document.querySelector('.menu-icon');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        menuIcon.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+        window.addEventListener('click', (event) => {
+            if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
 		$('#menu-btn').click(function () {
 			$('nav .navigation ul').addClass('active')
 		});
