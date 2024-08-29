@@ -641,6 +641,7 @@ footer .copyright .pro-links i:hover
 	z-index: 1000; 
 }
 .dropdown-menu.show {
+	list-style-type: none;
 	margin-top: 69px;
 	display: block;
 }
